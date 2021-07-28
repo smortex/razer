@@ -8,7 +8,14 @@
 #include <stdint.h>
 #include <sys/time.h>
 #include <time.h>
-#include <byteswap.h>
+#if defined(__DragonFly__) || defined(__FreeBSD__)
+#  include <sys/endian.h>
+#  define bswap_32 bswap32
+#  define bswap_16 bswap16
+#  define ENODATA (ELAST + 1)
+#else
+#  include <byteswap.h>
+#endif
 #include <stdio.h>
 #include <stdbool.h>
 

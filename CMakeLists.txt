@@ -20,7 +20,7 @@ macro(CHECK_LIB _LIB _HEADER)
 	endif (NOT ${_HEADER}_ERR)
 endmacro(CHECK_LIB)
 
-check_lib(usb-1.0 libusb.h)
+check_lib(usb libusb.h)
 
 add_subdirectory(librazer)
 

@@ -32,7 +32,7 @@ add_library(razer ${SHARED_OR_STATIC}
 set_target_properties(razer PROPERTIES COMPILE_FLAGS ${GENERIC_COMPILE_FLAGS}
 				       SOVERSION 1)
 
-target_link_libraries(razer usb-1.0)
+target_link_libraries(razer usb)
 
 install(TARGETS razer DESTINATION lib)
 

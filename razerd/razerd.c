@@ -34,10 +34,12 @@
 #include <stdarg.h>
 #include <stdbool.h>
 
-#ifdef __DragonFly__
-#include <sys/endian.h>
+#if defined(__DragonFly__) || defined(__FreeBSD__)
+#  include <sys/endian.h>
+#  define bswap_32 bswap32
+#  define bswap_16 bswap16
 #else
-#include <byteswap.h>
+#  include <byteswap.h>
 #endif
 
 
